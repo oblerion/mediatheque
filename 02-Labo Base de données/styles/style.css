@@ -1,0 +1,41 @@
+body{
+	width: 90%;
+	/*background-color: rgba(0, 0, 0, 0.5);*/
+	border: 2px solid white; /* Épaisseur, style, couleur */
+	background-image: url(../images/cinemabg01.png);
+	border-radius: 45px;
+}
+
+div{
+	background-color: black;
+	color: white;
+	border: 2px solid white; /* Épaisseur, style, couleur */
+	padding: 1px; /* Espace intérieur */
+	width: 90%;  /* Largeur du cadre */
+	margin: auto;
+}
+
+h1{
+	text-align: center;
+
+}
+
+.titre {
+	text-align: center;
+}
+
+.filtres {
+	text-align: center;
+}
+
+.résultats{
+	text-align: center;
+}
+
+.modification{
+	text-align: center;
+}
+
+.form{
+	color: white;
+}
