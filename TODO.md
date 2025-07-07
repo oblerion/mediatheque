@@ -7,4 +7,5 @@
 # php
 - [x] connection 
 - [x] film recherche titre
-- [ ] film filtre genre
+- [ ] filtre genre
+- [ ] filtre par acteur
