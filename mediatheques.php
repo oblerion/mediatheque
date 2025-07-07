@@ -8,6 +8,3 @@ PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION
 );
 return $ma_db;
 }
-function menu($ma_db){
-    $sql="select * from acteurs";
-}
