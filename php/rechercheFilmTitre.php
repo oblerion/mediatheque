@@ -1,5 +1,5 @@
 <?php
-function rechercheFilmTitre($db, $atfind)
+function rechercheFilmTitre($db, $atfind) // retourne le tableau de résultat
 {
     $sql = "SELECT * FROM films WHERE films_titre LIKE(%$atfind%);";
     $instru = $db->prepare($sql);
