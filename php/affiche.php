@@ -42,7 +42,7 @@ function affichertout($ma_db,$page){
     $renvoi = '<div class="grid-films">';
     foreach ($tab as $row) 
     {
-        $renvoi .= drawAffiche("film","images/".$row["films_affiche"],$row["films_titre"],$row["films_titre"],$row["films_annee"],$row["films_resume"]);
+        $renvoi .= drawAffiche("film",$row["films_affiche"],$row["films_titre"],$row["films_titre"],$row["films_annee"],$row["films_resume"]);
     }
     $renvoi .= "</div>";
     $renvoi .= '<div class="nav-buttons">';
