@@ -23,9 +23,10 @@ function button($label,$value)
     $renvoi .= '<input type="hidden" name="page" value="'.$value.'">';
     $renvoi .= "<input type='submit' value='$label'>";
     $renvoi .= '</form>';
+    return $renvoi;
 }
 
-function addichertout($ma_db,$page){
+function affichertout($ma_db,$page){
     $films_par_page = 4;
     $offset = ($page - 1) * $films_par_page;
     $sql = "SELECT * FROM films LIMIT :limit OFFSET :offset;";
