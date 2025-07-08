@@ -1,5 +1,6 @@
 <?php
 include_once "php/connexion.php";
+include_once "php/affiche.php";
 $titre="";
 $message="";
 try {
@@ -7,6 +8,8 @@ try {
 
     $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
     if ($page < 1) $page = 1;
+
+    $message = affichertout($ma_db,$page);
 	
 }
 	
