@@ -1,3 +1,14 @@
+<?php
+include_once "php/connexion.php";
+try{
+    $db = connexion();
+}
+catch(Exception $e)
+{
+    echo "erreur :".$e;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
