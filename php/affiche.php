@@ -49,7 +49,7 @@ function affichertout($ma_db,$page){
 
     // Page précédente
     if ($page > 1) {
-        button("<<","($page-1)");
+        $renvoi .= button("<<","($page-1)");
         // $renvoi .= '<form method="GET" action="">';
         // $renvoi .= '<input type="hidden" name="page" value="'.($page - 1).'">';
         // $renvoi .= '<input type="submit" value="<<">';
@@ -58,7 +58,7 @@ function affichertout($ma_db,$page){
 
     // Page suivante
 
-    button(">>","($page+1)");
+    $renvoi .= button(">>","($page+1)");
     // $renvoi .= '<form method="GET" action="">';
     // $renvoi .= '<input type="hidden" name="page" value="'.($page + 1).'">';
     // $renvoi .= '<input type="submit" value=">>">';
