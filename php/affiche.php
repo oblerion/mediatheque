@@ -1,11 +1,6 @@
 <?php
 function drawAffiche($class,$imgsrc,$alt,$titre,$annee,$resume)
 {
-    // echo "<div class=>".$class.">";
-    // echo "<img src='$imgsrc' alt='$alt'>";
-    // echo "<h2>$title</h2>";
-    // echo "</div>";
-
     $renvoi = "";
     $renvoi .= "<div class=$class>";
     $renvoi .= "<h3>$titre</h3>";
@@ -19,7 +14,7 @@ function drawAffiche($class,$imgsrc,$alt,$titre,$annee,$resume)
 function button($label,$value)
 {
     $renvoi = "";
-    $renvoi .= '<form method="GET" action="">';
+    $renvoi .= '<form method="GET" action="index.php">';
     $renvoi .= '<input type="hidden" name="page" value="'.$value.'">';
     $renvoi .= "<input type='submit' value='$label'>";
     $renvoi .= '</form>';
@@ -49,21 +44,11 @@ function affichertout($ma_db,$page){
 
     // Page précédente
     if ($page > 1) {
-        $renvoi .= button("<<","($page-1)");
-        // $renvoi .= '<form method="GET" action="">';
-        // $renvoi .= '<input type="hidden" name="page" value="'.($page - 1).'">';
-        // $renvoi .= '<input type="submit" value="<<">';
-        // $renvoi .= '</form>';
+        $renvoi .= button("<<",($page-1));
     }
 
     // Page suivante
-
-    $renvoi .= button(">>","($page+1)");
-    // $renvoi .= '<form method="GET" action="">';
-    // $renvoi .= '<input type="hidden" name="page" value="'.($page + 1).'">';
-    // $renvoi .= '<input type="submit" value=">>">';
-    // $renvoi .= '</form>';
-
+    $renvoi .= button(">>",($page+1));
     $renvoi .= '</div>';
 
     return $renvoi;
