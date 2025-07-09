@@ -6,10 +6,7 @@ $titre="";
 $message="";
 try {
 	$ma_db=connexion();
-   
-	
 }
-	
 catch(Exception $e){
 	die("erreur fatale:".$e->getMessage().
 		"<form><input type='button' value='retour' onclick='history.go(-1)'></form>"
