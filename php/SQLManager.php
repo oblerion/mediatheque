@@ -1,5 +1,5 @@
 <?php
-include_once "SQLManager.php";
+include_once "DBManager.php";
 class SQLManager
 {
     private $_dbmanager;
