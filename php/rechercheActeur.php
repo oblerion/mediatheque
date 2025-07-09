@@ -1,14 +1,13 @@
 <?php
 function rechercheActeur($db,$acteur)
 {
-    $sql =
-      "select * from films 
-      join film_acteurs
-      where 
-    films_id = (select fa_films_id from films_acteurs
-                    where fa_acteurs_id = 
-                    (
-                        select acteurs_id from acteurs 
-                        where acteurs_name like('')))";
+  $sql = "SELECT * FROM films f LEFT JOIN films_acteurs fa ON f.films_id = fa.fa_films_id LEFT JOIN 
+  acteurs a ON fa.fa_acteurs_id = a.acteurs_id WHERE a.acteur_nom LIKE('%'$acteur'%');";
+  $instru = $db->prepare($sql);
+  $instru->execute();
+  $instru->SetFetchMode(PDO::FETCH_ASSOC);
+  // on récupére un tab associatif avec comme clé le nom des colonnes
+  $tab=$instru->fetchAll();
+  return $tab;
 }
 ?>
