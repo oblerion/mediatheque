@@ -11,5 +11,4 @@ function rechercheFilmGenre($db,$genre)
     $tab=$instru->fetchAll();
     return $tab;
 }
-
 ?>
