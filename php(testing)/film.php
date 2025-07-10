@@ -1,4 +1,5 @@
 <?php
+// affichage du div de l'affiche de film
 function film($class,$imgsrc,$alt,$titre,$annee,$resume)
 {
     $renvoi = "";
