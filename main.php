@@ -1,7 +1,9 @@
 
 <?php 
 
-require_once "fonctions.php";
+//require_once "fonctions.php";
+require_once "php(testing)/connexion.php";
+require_once "php(testing)/carousel.php";
 $titre="";
 $message="";
 try {
@@ -19,7 +21,7 @@ catch(Exception $e){
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 if ($page < 1) $page = 1;
 
-$message .= affichertout($ma_db, $page);
+
 
 
 
@@ -30,7 +32,7 @@ $message .= affichertout($ma_db, $page);
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Médiathèque</title>
-	<link rel="stylesheet" href="styles/style.css">
+	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="top">
@@ -60,7 +62,7 @@ $message .= affichertout($ma_db, $page);
     ?>
 </div>
 		<?php 
-		echo $message;
+			echo carousel($ma_db, $page);
 		 ?>
 	</div>
 
