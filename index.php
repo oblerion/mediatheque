@@ -2,6 +2,9 @@
 	//require_once "fonctions.php";
 	require_once "php(testing)/connexion.php";
 	require_once "php(testing)/carousel.php";
+    require_once "php(testing)/pageOffset.php";
+    require_once "php(testing)/filmParPage.php";
+    require_once "php(testing)/rechercheDefault.php";
 	$titre="";
 	$message="";
 	try {
@@ -49,7 +52,7 @@
 				?>
 			</div>
 			<?php 
-				echo carousel($ma_db, $page);
+				echo carousel($page , rechercheDefault($ma_db,filmParPage(),pageOffset($page)));
 			?>
 		</div>
 	</body>
