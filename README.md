@@ -8,3 +8,7 @@ Le site permettrait aussi de rechercher :
 - Les films dans lesquels jouent un acteur
 - Les films dont le nom ou le synopsis contiennent une certaine valeur
 - Les films qui font partie d’un certain genre
+
+# point d'entrée
+- serveur wamp -> main.php
+- serveur mysql -> index.php
