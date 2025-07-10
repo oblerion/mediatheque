@@ -1,7 +1,7 @@
 <?php 
 
 require_once "connexion.php";
-require_once "afficherTout.php";
+require_once "affichertout.php";
 require_once "rechercheActeur.php";
 require_once "rechercheFilmTitreSynopsis.php";
 
@@ -47,9 +47,6 @@ if (!empty($resultats)) {
     $message .= '</div>';
 }
 ?>
-
-
- ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
