@@ -48,8 +48,6 @@ if (!empty($resultats)) {
 }
 ?>
 
-
- ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
