@@ -1,4 +1,3 @@
-
 <?php 
 function connexion(){
     $ma_db= new PDO(
@@ -8,6 +7,22 @@ function connexion(){
         )
     );
     return $ma_db;
+}
+?>
+
+<?php
+function rechercheActeur($db, $acteur) {
+    $sql = "SELECT * FROM films f
+            LEFT JOIN films_acteurs fa ON f.films_id = fa.fa_films_id
+            LEFT JOIN acteurs a ON fa.fa_acteurs_id = a.acteurs_id
+            WHERE a.acteurs_nom LIKE :acteur";
+
+    $instru = $db->prepare($sql);
+    $instru->bindValue(':acteur', "%$acteur%", PDO::PARAM_STR);
+    $instru->execute();
+    $instru->setFetchMode(PDO::FETCH_ASSOC);
+    
+    return $instru->fetchAll();
 }
 ?>
 
@@ -58,4 +73,20 @@ function affichertout($ma_db, $page = 1){
     return $renvoi;
 }
 
+?>
+
+<?php
+function rechercheFilmTitreSynopsis($db, $atfind) {
+    $sql = "SELECT * FROM films 
+            WHERE films_titre LIKE :search 
+            OR films_resume LIKE :search";
+
+    $instru = $db->prepare($sql);
+    $like = "%$atfind%";
+    $instru->bindValue(':search', $like, PDO::PARAM_STR);
+    $instru->execute();
+    $instru->setFetchMode(PDO::FETCH_ASSOC);
+    
+    return $instru->fetchAll();
+}
 ?>
