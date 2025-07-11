@@ -3,7 +3,7 @@
 
 function affichertout($ma_db, $page = 1){
     
-    $films_par_page = 4;
+    $films_par_page = 3;
     $offset = ($page - 1) * $films_par_page;
     $sql = "SELECT * FROM films LIMIT :limit OFFSET :offset;";
 
@@ -15,7 +15,24 @@ function affichertout($ma_db, $page = 1){
 
     $tab=$instru->fetchAll();
 
-    $renvoi = '<div class="grid-films">';
+    $renvoi = '<div class="nav-buttons">';
+
+    // Page précédente
+    if ($page > 1) {
+        $renvoi .= '<form class="G" method="GET" action="">';
+        $renvoi .= '<input type="hidden" name="page" value="'.($page - 1).'">';
+        $renvoi .= '<input type="submit" value="<<">';
+        $renvoi .= '</form>';
+    }
+
+    // Page suivante
+    $renvoi .= '<form class="D" method="GET" action="">';
+    $renvoi .= '<input type="hidden" name="page" value="'.($page + 1).'">';
+    $renvoi .= '<input type="submit" value=">>">';
+    $renvoi .= '</form>';
+
+    $renvoi .= '</div>';
+    $renvoi .= '<div class="grid-films">';
     foreach ($tab as $row) {
     $renvoi .= '<div class="film">';
     $renvoi .= '<h3>'.$row["films_titre"].'</h3>';
@@ -25,23 +42,6 @@ function affichertout($ma_db, $page = 1){
     $renvoi .= '</div>';
 }
     
-    $renvoi .= '<div class="nav-buttons">';
-
-    // Page précédente
-    if ($page > 1) {
-        $renvoi .= '<form method="GET" action="">';
-        $renvoi .= '<input type="hidden" name="page" value="'.($page - 1).'">';
-        $renvoi .= '<input type="submit" value="<<">';
-        $renvoi .= '</form>';
-    }
-
-    // Page suivante
-    $renvoi .= '<form method="GET" action="">';
-    $renvoi .= '<input type="hidden" name="page" value="'.($page + 1).'">';
-    $renvoi .= '<input type="submit" value=">>">';
-    $renvoi .= '</form>';
-
-    $renvoi .= '</div>';
 
     return $renvoi;
 }

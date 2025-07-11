@@ -99,12 +99,6 @@ if (!empty($resultats)) {
 		<h2>Résultats</h2>
 		
 	<div class="pagination">
-    <?php
-    if ($page > 1) {
-        echo '<a href="?page='.($page - 1).'"><< Précédent</a> ';
-    }
-    echo '<a href="?page='.($page + 1).'">Suivant >></a>';
-    ?>
 </div>
 		<?php 
 		echo $message;
