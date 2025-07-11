@@ -166,7 +166,7 @@ form.G input[type="submit"] {
     box-shadow: 0 2px 6px rgba(0,0,0,0.3);
     margin-right: 10px; /* espace si besoin */
     opacity: 0.7;
-    background-attachment: none;
+    background-attachment: ;
     padding: 0px;
 }
 
