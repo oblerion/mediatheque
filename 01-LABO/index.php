@@ -57,7 +57,7 @@ if (!empty($resultats)) {
 </head>
 <body>
     <div class="top">
-	<div class="titre">
+	<div class="titre Elpueblo">
 	<h1>Médiathèque</h1>
 	</div>
 
