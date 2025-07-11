@@ -1,7 +1,7 @@
 <?php 
 
 require_once "connexion.php";
-require_once "affichertout.php";
+require_once "afficherTout.php";
 require_once "rechercheActeur.php";
 require_once "rechercheFilmTitreSynopsis.php";
 
@@ -57,7 +57,7 @@ if (!empty($resultats)) {
 </head>
 <body>
     <div class="top">
-	<div class="titre">
+	<div class="titre Elpueblo">
 	<h1>Médiathèque</h1>
 	</div>
 

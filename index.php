@@ -1,10 +1,11 @@
 <?php 
 	//require_once "fonctions.php";
-	require_once "php(testing)/connexion.php";
-	require_once "php(testing)/carousel.php";
-    require_once "php(testing)/pageOffset.php";
-    require_once "php(testing)/filmParPage.php";
-    require_once "php(testing)/rechercheDefault.php";
+	$PHPPATH = 'php(testing)';
+	require_once "$PHPPATH/connexion.php";
+	require_once "$PHPPATH/carousel.php";
+	require_once "$PHPPATH/pageOffset.php";
+	require_once "$PHPPATH/filmParPage.php";
+	require_once "$PHPPATH/rechercheDefault.php";
 	$titre="";
 	$message="";
 	try {
@@ -27,7 +28,8 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Médiathèque</title>
-		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="styles/style.css">
+        	<link rel="icon" href="pedro_sanchez.webp">
 	</head>
 	<body>
 		<div class="top">
@@ -44,12 +46,6 @@
 		<div class="résultats">
 			<h2>Résultats</h2>
 			<div class="pagination">
-				<?php
-				if ($page > 1) {
-					echo '<a href="?page='.($page - 1).'"><< Précédent</a> ';
-				}
-				echo '<a href="?page='.($page + 1).'">Suivant >></a>';
-				?>
 			</div>
 			<?php 
 				echo carousel($page , rechercheDefault($ma_db,filmParPage(),pageOffset($page)));

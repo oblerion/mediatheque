@@ -9,6 +9,10 @@ Le site permettrait aussi de rechercher :
 - Les films dont le nom ou le synopsis contiennent une certaine valeur
 - Les films qui font partie d’un certain genre
 
-# point d'entrée
-- serveur wamp -> main.php
-- serveur mysql -> index.php
+## 01-LABO (test beta)
+composant test réussi
+
+## php(testing)
+composant en phase de test
+
+
